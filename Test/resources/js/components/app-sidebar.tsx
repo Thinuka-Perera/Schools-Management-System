@@ -10,10 +10,17 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { dashboard } from '@/routes';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { Book, BookOpen, Folder, GraduationCap, LayoutGrid, ListChecks, Users } from 'lucide-react';
+import {
+    Book,
+    BookOpen,
+    Folder,
+    GraduationCap,
+    LayoutGrid,
+    ListChecks,
+    Users,
+} from 'lucide-react';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
@@ -22,25 +29,25 @@ const mainNavItems: NavItem[] = [
         href: '/dashboard',
         icon: LayoutGrid,
     },
-     {
+    {
         title: 'Teachers',
-        href:'/teachers',
+        href: '/teachers',
         icon: GraduationCap,
     },
-     {
+    {
         title: 'Students',
         href: '/students',
         icon: Users,
     },
-     {
+    {
         title: 'Courses',
         href: '/courses',
         icon: Book,
     },
-     {
+    {
         title: 'Enrollment',
         href: '/enrollments',
-        icon:ListChecks,
+        icon: ListChecks,
     },
 ];
 
@@ -64,7 +71,7 @@ export function AppSidebar() {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
-                            <Link href={dashboard()} prefetch>
+                            <Link href="/dashboard" prefetch>
                                 <AppLogo />
                             </Link>
                         </SidebarMenuButton>

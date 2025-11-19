@@ -7,6 +7,8 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\DashboardController;
+
 
 Route::get('/', function () {
     return Inertia::render('welcome', [
@@ -15,9 +17,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('dashboard', function () {
-        return Inertia::render('dashboard');
-    })->name('dashboard');
+   
 
 
     Route::get('/teachers', [TeacherController::class, 'index'])->name('teachers.index');
@@ -42,6 +42,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/enrollments', [EnrollmentController::class, 'store'])->name('enrollments.store');
     Route::put('/enrollments/{id}', [EnrollmentController::class, 'update'])->name('enrollments.update');
     Route::delete('/enrollments/{id}', [EnrollmentController::class, 'destroy'])->name('enrollments.destroy');
+
+
+    //Dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
 });
