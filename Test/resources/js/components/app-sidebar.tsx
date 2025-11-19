@@ -13,14 +13,34 @@ import {
 import { dashboard } from '@/routes';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { BookOpen, Folder, LayoutGrid } from 'lucide-react';
+import { Book, BookOpen, Folder, GraduationCap, LayoutGrid, ListChecks, Users } from 'lucide-react';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
     {
         title: 'Dashboard',
-        href: dashboard(),
+        href: '/dashboard',
         icon: LayoutGrid,
+    },
+     {
+        title: 'Teachers',
+        href:'/teachers',
+        icon: GraduationCap,
+    },
+     {
+        title: 'Students',
+        href: '/students',
+        icon: Users,
+    },
+     {
+        title: 'Courses',
+        href: '/courses',
+        icon: Book,
+    },
+     {
+        title: 'Enrollment',
+        href: '/enroll',
+        icon:ListChecks,
     },
 ];
 
