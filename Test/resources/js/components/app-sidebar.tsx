@@ -39,7 +39,7 @@ const mainNavItems: NavItem[] = [
     },
      {
         title: 'Enrollment',
-        href: '/enroll',
+        href: '/enrollments',
         icon:ListChecks,
     },
 ];
